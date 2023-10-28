@@ -1,0 +1,117 @@
+\documentclass{article}
+
+\usepackage{enumerate} % Used for customizing ordered lists
+
+\title{Latex Commands and Environments}
+\author{Irfan}
+\date{28 September 2023}
+
+% Commands that have a \begin and \end are called "Environments"
+\begin{document}
+
+% Commands that don't neeed \begin and \end are simply known as "commands"
+\maketitle
+
+% "abstract" is another example of an environment
+
+\begin{abstract}
+  This is the document abstract. It contains a brief summary of the document.
+\end{abstract}
+
+% "footnote" is a command
+This is the document body\footnote{Body is the main content}.
+
+We can set custome number to footnotes\footnote[5]{A footnote}.
+
+\section{Unordered Lists}
+% We can make unordered lists using the "itemize" environment
+\begin{itemize}
+  \item Apple
+  \item Orange
+  \item Grape
+  \begin{itemize} % This is a nested list
+    \item Pink Grape
+    \item Purple Grape
+  \end{itemize}
+\end{itemize}
+
+\section{Customized Unordered Lists}
+% We can put custom markers in unordered lists
+\begin{itemize}
+  \item[*] Apple
+  \item[*] Orange
+  \item[*] Grape
+\end{itemize}
+
+\section{Ordered Lists}
+% The "enumerate" environment is used for creating ordered lists.
+% There's also an "enumerate" package for customizing ordered lists.
+\begin{enumerate}
+  \item Red
+  \item Green
+  \item Blue
+  \begin{enumerate} % Nested list
+    \item Bird
+    \item Berry
+  \end{enumerate}
+\end{enumerate}
+
+\section{Customized ordered lists}
+First List:
+\begin{enumerate}[i.] % 'i' optional argument will render roman numerals
+  \item Red
+  \item Green
+  \item Blue
+\end{enumerate}
+
+Second List:
+\begin{enumerate}[i)] % This will use parentheses instead of dots
+  \item Red
+  \item Green
+  \item Blue
+\end{enumerate}
+
+Third List:
+\begin{enumerate}[A)] % 'A' optional argument will render capital characters
+  \item Red
+  \item Green
+  \item Blue
+\end{enumerate}
+
+\section{Tables with default columns}
+% Latex tables can be created using the "tabular" environment.
+% Tables have three default columns. Right (r), Center (c) and Left (l).
+% We can customize column vertical borders using the pipe '|' operator.
+% NOTE: Tables created using "tabular" are INLINE
+\begin{tabular}{ |r| c l } % Only right column will have vertical border
+  \hline % This will add horizontal border
+  Column heading 1 & Column heading 2 & Column heading3 \\ % This line break is necessary
+  \hline
+  \hline % We can add multiple borders
+  1 & 2 & 3
+\end{tabular}
+Some text.
+
+\section{Separating Tables from text}
+% To solved the above problem, we have to wrap our table inside
+% the "table" environment.
+Some text.
+% 'h' optional argument means "here". It indicates the next available space
+% Without the 'h' argument, Latex will put the table in any random free space, typically
+% at the beginning or at the end of the page.
+% Other arguments include top (t) and bottom (b). Sometimes, passing the argument isn't enough
+% and we may have to force the placement using the '!' symbol with the argument like "t!".
+\begin{table}[h]
+  \centering % Center the table
+  \begin{tabular}{ |r| c l }
+    \hline
+    Column heading 1 & Column heading 2 & Column heading3 \\ % This line break is necessary
+    \hline
+    \hline
+    1 & 2 & 3
+  \end{tabular}
+  \caption{This is a table.}
+\end{table}
+Some more text.
+
+\end{document}

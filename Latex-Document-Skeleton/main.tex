@@ -1,0 +1,78 @@
+\documentclass{article}
+
+% To isntall latex packages in Fedora, use the command: %
+% sudo dnf install tex-<latex package name> %
+
+% The area before begin{document} is called "preamble". The area after is called
+% the main body.
+
+\usepackage{csquotes} % Used for adding quotes
+\usepackage{blindtext} % Used for adding dummy text. This is useful for testing.
+\usepackage{comment} % Used for multi-line comments
+
+\title{Skeleton of a Latex Document}
+\author{Irfan}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+This is the document body.
+
+\begin{comment}
+  Everything inside this block
+  will be treated as comments and won't be rendered.
+\end{comment}
+
+\section{This is a section}
+Some random text of this section.
+
+\subsection{This is a subsection}
+Some text
+
+% If we don't want the section to be numbered, we can use \section*{}
+\section*{This is a section without number}
+More random text.
+
+\subsection{This is a subsection}
+Some text
+\subsection*{This is a subsection without number}
+Some text
+
+% Note that this numbered section will have serial '2' because non-numbered
+% sections aren't counted.
+\section{This is the third Section}
+Even more random text.
+
+\section{Using the "csquotes" package}
+
+He said, \textquote{I love Latex}
+
+\section{Using the "blindtext" package}
+
+\blindtext
+
+\section{Adding paragraphs}
+% Put a blank line to indicate a new paragraph.
+
+\blindtext
+
+This is another paragraph.
+
+\section{Adding paragraphs (Alternative approach)}
+
+This is a paragraph. \par This is anothe paragraph.
+
+\section{Adding paragraph without indentation}
+This is a paragraph.
+\newline This is another paragraph.
+
+\section{Text formatting}
+This is how to make text \textbf{bold}. This is how to
+maek text \textit{italic} and this is how to make an
+\underline{underline}.
+
+\end{document}
