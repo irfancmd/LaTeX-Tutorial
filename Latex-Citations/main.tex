@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\title{Latex-Citations}
+\author{Irfan}
+\date{3 November 2023}
+
+\begin{document}
+  \maketitle
+
+  \section{Default reference}
+  You can take a look \cite{andersen} and \cite{shelly}.
+
+  \section{Reference with page number}
+  % "~" adds extra space.
+  You can take a look \cite[p.~37]{andersen} and \cite[p.~40]{shelly}.
+
+  \section{Multiple references at once}
+  You can take a look \cite{andersen,shelly}.
+
+  \vspace{1cm}
+
+  % The "thebibliography" environment is used for storing references.
+  % We have to provide the number of references in the argument
+  \begin{thebibliography}{2}
+    \bibitem{andersen}
+    H. C. Andersen. \textit{The Little Mermaid}. 1837.
+
+    \bibitem{shelly}
+    M. Shelly. \textit{Frankestein}. Oxford University Press, 1818.
+  \end{thebibliography}
+\end{document}

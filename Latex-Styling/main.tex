@@ -1,0 +1,41 @@
+\documentclass{article}
+
+% External font commands collected from the "Latex Font Catalogue"
+% Have to install the "fira" package.
+\usepackage{FiraSans} %% Optional argument 'sfdefault' activates Fira Sans as the default text font
+\usepackage[T1]{fontenc}
+% Used for adding colors to the document. The "dvipsnames" argument adds additional colors.
+\usepackage[dvipsnames]{xcolor}
+
+\title{Latex-Styling}
+\author{Irfan}
+\date{3 November 2023}
+
+\definecolor{myColor1}{RGB}{100, 150, 100}
+\definecolor{myColor2}{HTML}{3F51B5} % Hex color
+
+\begin{document}
+  \maketitle
+
+  \section{Manipulating text}
+    \subsection{Sans serief font}
+    % The "FiraSans" package will override the sans serief font used by "sffamily" command.
+    {\sffamily This text is in sans-serief.}
+
+    \subsection{Monospace/Typewriter font}
+    {\ttfamily This text is in monospace.}
+
+    \subsection{Font size}
+    {\huge Huge} text and {\small small} text.
+
+  \section{Adding colors}
+    \subsection{Using package colors}
+      {\color{red} A red text.}
+
+    \subsection{Using custom colors}
+      \textcolor{myColor1}{A text with custom color.}
+      \newline
+      \textcolor{myColor2}{Another text with custom color.}
+
+
+\end{document}

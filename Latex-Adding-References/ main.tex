@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{amsmath} % Enhances equation references
+\usepackage{hyperref} % Makes references interactive and allows adding references to outside pages
+
+\title{Adding References in Latex}
+\author{Irfan}
+\date{3 November 2023}
+
+\begin{document}
+
+\maketitle
+
+% We can refer to sections by adding a label to them
+\section{First section}
+\label{first}
+Some text.
+
+\section{Second section}
+% The ref command
+More text. Here is \ref{first}.
+
+
+\section{Third section}
+% The pageref command
+Even more text. The first section is located
+at \pageref{first}.
+
+\section{Referencing equations}
+\begin{equation}\label{polynomial_1}
+  ax^2 + bx + c
+\end{equation}
+
+The equation \eqref{polynomial_1}.
+
+\section{Links to outside web pages}
+\subsection{Show links directly}
+  Google's url is \url{https://www.google.com}.
+
+\subsection{Put links behid placeholder text}
+  Google's url is \href{https://www.google.com}{here}.
+
+
+
+\end{document}

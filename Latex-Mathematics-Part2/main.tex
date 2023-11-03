@@ -1,0 +1,195 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Mathematics in Latex - Part 2}
+\author{Irfan}
+\date{3 November 2023}
+
+% Required for using the "theorem" environment
+% Note that we're adding section optional argument for making section number the primary number.
+\newtheorem{theorem}{Theorem}[section]
+
+% We're making the definition environment's numbers based on the thoeorem's number.
+% So, A definition's numbers will continue from theorem's number.
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark} % Use * for omitting numbers
+
+\begin{document}
+
+\maketitle
+
+\section{Sum symbol}
+  \subsection{Inline math}
+    $\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ Some random text.
+
+  % Inline math shouldn't exceed one-third of the \textwidth. If it exceeds
+  % that, it's better to use display math.
+  \subsection{Display math}
+    \[\sum_{n=0}^{\infty}\frac{1}{n^2+1}\]
+
+\section{Integral symbol}
+  \subsection{Inline math}
+    $\int_{0}^{1}x^2dx$ Some random text.
+
+  \subsection{Display math}
+    \[\int_{0}^{1}x^2dx\]
+
+\section{Double integral symbol}
+  % For triple integral, use the "iiint" command.
+  \subsection{Inline math}
+    $\iint_{s}x^2+ydxdy$ Some random text.
+
+  \subsection{Display math}
+    \[\iint_{s}x^2+ydxdy\]
+
+\section{Limit symbol}
+  \subsection{Inline math}
+    $\lim_{x\to 1}x$ Some random text.
+
+  \subsection{Display math}
+    \[\lim_{x\to 1}x\]
+
+\section{Misc symbols}
+  \subsection{Inline math}
+    $\max_{n\in  \{1,2,3\}}n, \min, \sup, \inf, \limsup, \liminf$ Some random text.
+
+  \subsection{Display math}
+    \[\max_{n\in  \{1,2,3\}}n\]
+
+\section{Multiline math}
+  % Use "multiline*" environment for omitting equation numbers
+  \begin{multline}
+    f(x) = 2x + 2x^2 + 3x^3 + 4xy \\
+      + 2x + 2x^2 + 3x^3 + 4xy \\
+      + 2x + 2x^2
+  \end{multline}
+
+\section{The align environment}
+  % Use "&" where we want to align the next line
+  % Note that spaces need to be aligned as well
+  % Put "notag" command in the current line if we don't want that line to be numbered
+  \begin{align}
+    2x + 3y + 3z + w &= 2  & 3x + 4y + 1z &=4 \\
+    x + 4y + 3z + w &= 3 & -x - y - z - w &= 3 \notag
+  \end{align}
+
+  \subsection{Align continued}
+  \begin{align}
+    f(x) &= 3x + 3y - 2x \\
+    &= 3y
+  \end{align}
+
+\section{Some formatting commands}
+  \subsection{Adding extra spaces}
+  % Use "quad" command for adding extra space and "qquad" command for adding even more space.
+  \[\frac{x-1}{x-1}=1 \quad \forall x\neq1\]
+
+  % Use "," command for adding a tiny space.
+  \[f(x)=\int\sin(x)\,dx\]
+
+\section{Modifying parentheses}
+  ( \big( \Big( \bigg( \Bigg(
+
+\section{Math fonts}
+  \subsection{Bold font}
+  $\mathbf{a}$
+
+  \subsection{Caligraphy font}
+  % Works only for capital letters
+  $\mathcal{T}$
+
+  \subsection{Blackboard-bold font}
+  % Works only for capital letters
+  $\mathbb{R}$
+
+  \subsection{Bar symbol}
+  % Best for one character
+  $\bar{a}$
+
+  \subsection{Overline symbol}
+  % Best for multiple characters
+  $\bar{a}$
+  $\overline{ab}$
+
+  \subsection{Dot symbol}
+  $\dot{f}$
+
+  \subsection{Prime symbol}
+  $f', f'', f'''$
+
+\section{Matrices}
+  \subsection{Default - no boundaries}
+  \[
+    A =
+    \begin{matrix}
+      1 & 2 & 3 & 4  \\
+      5 & 6 & 7 & 8
+    \end{matrix}
+  \]
+
+  \subsection{With parentheses}
+  \[
+    A =
+    \begin{pmatrix}
+      1 & 2 & 3 & 4  \\
+      5 & 6 & 7 & 8
+    \end{pmatrix}
+  \]
+
+  \subsection{With brackets}
+  \[
+    A =
+    \begin{bmatrix}
+      1 & 2 & 3 & 4  \\
+      5 & 6 & 7 & 8
+    \end{bmatrix}
+  \]
+
+  \subsection{With vertical bars}
+  % Used for determinant
+  \[
+    A =
+    \begin{vmatrix}
+      1 & 2 & 3 & 4  \\
+      5 & 6 & 7 & 8
+    \end{vmatrix}
+  \]
+
+\section{Cases}
+    % Use the "text" command for inserting text inside a math environment.
+    \[
+      |x| =
+      \begin{cases}
+        x & \text{ for } x > 0 \\
+        0 & \text{ for } x = 0 \\
+        -x & \text{ for } x = 0
+      \end{cases}
+    \]
+
+\section{Theorems}
+\begin{theorem}[My Theorem]
+ A theorem.
+\end{theorem}
+
+\begin{definition}
+ A definition.
+\end{definition}
+
+\begin{definition}
+ Another definition.
+\end{definition}
+
+\begin{remark}
+ A remark.
+\end{remark}
+
+\section{Proofs}
+\begin{proof}
+  A Proof
+\end{proof}
+
+\end{document}
